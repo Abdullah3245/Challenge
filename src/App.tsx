@@ -1,22 +1,18 @@
-import Nav from "./components/Nav"
 import Courses from "./components/Courses"
-import Cart from "./components/Cart"
+import CheckOut from "./components/checkOut";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
 	return (
 		<>
-			<Nav />
-			<div
-				style={{
-					width: "100%",
-					boxSizing: "border-box",
-					padding: "0 calc(1rem + 10%)",
-				}}>
-				<Courses />
-				<Cart />
-			</div>
+			<BrowserRouter>
+				<Routes>
+						<Route index element={<Courses />} />
+						<Route path="checkout" element={<CheckOut />} />
+				</Routes>
+			</BrowserRouter>
 		</>
-	)
+	);
 }
 
-export default App
+export default App;
